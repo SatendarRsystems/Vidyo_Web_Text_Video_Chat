@@ -70,6 +70,9 @@ export class VidyoClientService {
         this.microphones = [];
         this.speakers = [];
 
+        this.selectedLocalCamera = 0;
+        this.selectedLocalMicrophone = 0;
+        this.selectedLocalSpeaker = 0;
         this.cameras[0] = { id: '0', name: 'None' };
         this.microphones[0] = { id: '0', name: 'None' };
         this.speakers[0] = { id: '0', name: 'None' };
