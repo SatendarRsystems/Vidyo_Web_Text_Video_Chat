@@ -1,0 +1,32 @@
+header{
+	background: #01649a;
+	height: 65px;
+	border-top-right-radius: 6px;
+	color:#fff;
+	padding:15px 22px;
+	box-sizing: border-box;
+	display: flex;
+    justify-content: space-between;
+}
+header .username span{
+	display: block;
+	font-size: .78em;
+	font-weight: normal;
+	opacity: .8;
+}
+header .logout a{
+	display: block;
+	margin-top:7px;
+	cursor: pointer;
+}
+header .options{
+	display: flex;
+	min-width: 70px;
+	justify-content: space-between;
+}
+header .options a{
+	cursor: pointer;
+}
+header .settings{
+	margin-top:8px;
+}

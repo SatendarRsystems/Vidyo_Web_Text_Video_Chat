@@ -1,0 +1,40 @@
+<div class="blanket" id="blanket" *ngIf="isLoading">
+    <div class="loader">
+        <img class="loader-img" src="assets/images/loading.gif" />
+        <div class="loader-text">You are about to enter the meeting room.</div>
+    </div>
+</div>
+
+<div class="blanket" id="blanket" *ngIf="errorOccured">
+    <div class="loader">
+        <div class="loader-text">{{error_message}}</div>
+        <!-- ok button -->
+        <div class="popup-button-row">
+            <button type="button" class="btn" (click)="close()" >Ok</button>
+        </div>
+    </div>
+</div>
+
+<app-setting *ngIf="showSetting" id="setting" (hideSetting)="displaySetting($event)"> </app-setting>
+
+
+<div class="container">
+    <div class="box-wrapper chat-main-container">
+        <div class="user-list">
+            <!--User List Header-->
+            <app-user-list-header></app-user-list-header>
+            <!--User List -->
+            <app-user-list></app-user-list>
+            <!--Text chat window-->
+            <app-text-chat-window></app-text-chat-window>
+
+        </div>
+        <div class="chat">
+            <!--Header -->
+            <app-header (showSetting)="displaySetting($event)"></app-header>
+            <!--Chat window -->
+            <app-video-chat-window></app-video-chat-window>
+        </div>
+
+    </div>
+</div>

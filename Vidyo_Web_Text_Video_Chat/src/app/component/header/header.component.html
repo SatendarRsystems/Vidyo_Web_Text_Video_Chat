@@ -1,0 +1,28 @@
+<header>
+  <div class="logo mobile-device">
+    <img src='assets/images/userlist-logo.png'>
+  </div>
+  <!--Resource ID-->
+  <div class="username mobile-device">
+    <span>Resource ID</span>{{getResourceID()}}</div>
+  <!--Total Particiapnts-->
+  <div class="username mobile-device">
+    <span>Total Particiapnts</span>({{getUsers().length}})</div>
+  <!--Display name-->
+  <div class="username">
+    <span>Display Name</span>{{getUserName()}}</div>
+  <div class="options">
+    <!-- Settings -->
+    <div class="settings">
+      <a (click)="displaySetting()">
+        <img src="assets/images/settings.png"  title="Settings" tabindex="3" (keyup.enter)="displaySetting()"/>
+      </a>
+    </div>
+    <!--Logout-->
+    <div class="logout">
+      <a (click)="logout()">
+        <img src="assets/images/logout.png" title="Logout" tabindex="4" (keyup.enter)="logout()" />
+      </a>
+    </div>
+  </div>
+</header>

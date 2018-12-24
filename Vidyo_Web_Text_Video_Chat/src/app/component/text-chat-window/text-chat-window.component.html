@@ -1,0 +1,32 @@
+<div class = "text-chat-window">
+<div #chatMessageBox class="chat-box" id="chatLogs">
+    <!--Message display area-->
+    <div *ngFor="let message of messageList">
+        <!-- Other members message display area -->
+        <div class="chat-message in-message" *ngIf="!message.isUser">
+            <div class="name-icon" [style.background]="message.userBgColor">{{message.username.charAt(0).toUpperCase()}}</div>
+            <div class="message">
+                <div class="left-arrow"></div>
+                <h4 style="color:#705edd">{{message.username}}</h4>
+                <pre>{{message.data.message}}</pre>
+            </div>
+        </div>
+        <!--User message display area -->
+        <div class="chat-message send-message" *ngIf="message.isUser">
+            <div class="message">
+                <div class="right-arrow"></div>
+                <pre>{{message.data.message}}</pre>
+            </div>
+            <div class="name-icon" [style.background]="message.userBgColor">{{message.username.charAt(0).toUpperCase()}}</div>
+        </div> 
+    </div>
+  </div>
+
+<!-- chat input area -->
+<div class="chat-inputbox">
+  <input #messageSendInputBox type="text" name="chat" id="SendMessage" (keyup.enter)="sendChatMsg()" tabindex="1"/>
+  <a class="send-icon">
+      <img src='../../assets/images/send-icon.png' (click)="sendChatMsg()" (keyup.enter)="sendChatMsg()" tabindex="2"/>
+  </a>
+</div>
+</div>

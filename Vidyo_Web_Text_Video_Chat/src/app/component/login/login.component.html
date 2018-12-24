@@ -1,0 +1,54 @@
+<!-- Loader -->
+<div class="blanket" id="blanket" *ngIf="isLoading">
+  <div class="loader">
+    <img class="loader-img" src="assets/images/loading.gif" />
+    <div class="loader-text">You are about to enter the meeting room.</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="login-container">
+    <div class="login-logo">
+      <img src="assets/images/logo.png">
+    </div>
+    <div class="box-wrapper">
+      <h2>Join Vidyo Meeting</h2>
+      <!-- Error Message Display Area -->
+      <div #errorcointainer class="errorContainer" [hidden]="!errorOccured">
+        <div #connectionStatus id="connectionStatus"></div>
+        <div #helperText id="helper_text"></div>
+        <div #helperPlugInDownload id="helperPlugInDownload"></div>
+        <div #helperAppDownload id="helperAppDownload"></div>
+      </div>
+      <!-- User name input box -->
+      <div class="input-row">
+        <input #logintext type="text" name="username" maxlength="20" placeholder="Enter Display Name" [(ngModel)]="login.userName"
+          (keyup.enter)="joinMeeting()" autofocus/>
+      </div>
+      <!-- Meeting room input box -->
+      <div class="input-row">
+        <input #meetingtext type="text" name="username" maxlength="20" placeholder="Enter Resource ID" [(ngModel)]="login.meetingRoom"
+          (keyup.enter)="joinMeeting()" />
+      </div>
+      <!-- Host input box -->
+      <div class="input-row">
+        <input #hosttext type="text" name="username" placeholder="Enter Host" [(ngModel)]="login.hostName" (keyup.enter)="joinMeeting()"
+          autofocus/>
+      </div>
+      <!-- Token input box -->
+      <div class="input-row">
+        <input #tokentext type="text" name="username" placeholder="Enter Token" [(ngModel)]="login.token" (keyup.enter)="joinMeeting()"
+        />
+      </div>
+      <!-- Join meeting button -->
+      <div class="text-right">
+        <button type="button" class="btn-login" (click)="joinMeeting()" [disabled]="disableJoinButton">Join Meeting</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-bg">
+
+</div>

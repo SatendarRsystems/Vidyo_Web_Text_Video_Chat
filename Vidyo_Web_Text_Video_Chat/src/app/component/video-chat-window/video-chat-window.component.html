@@ -1,0 +1,14 @@
+<div class="video-chat-box" id="connected-video-chat">
+    <div #videosection id="video-section">
+    </div>
+
+    
+    <div class="video-chat-controls">
+        <a  [class.mute]="preview" class="video" (click)="togglePreview()" *ngIf="isConnected"></a>
+        <a  [class.mute]="muted" class="voice" (click)="toggleMic()" *ngIf="isConnected"></a>
+        <a  [ngClass]="{
+            'connect' : !isConnected,
+            'disconnect' : isConnected
+          }" (click)="toggleConnect()"></a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="popup-container">
+  <div class="popup-window">
+    <header class="popup">
+      Settings
+    </header>
+    <div class="close" (click)="closeSetting()">
+      <img src="assets/images/close.png" />
+    </div>
+
+    <div class="form-container">
+      <div class="form-row">
+        <label for="cameras">Camera</label>
+        <div class="input-field">
+          <select  (change)="changed('camera', $event)" [(ngModel)]="selectedCameraId" >
+            <option *ngFor="let camera of cameras" [value]="camera.id">{{camera.name}}</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <label for="microphone">Microphone</label>
+        <div class="input-field">
+          <select  (change)="changed('microphone',$event)" [(ngModel)]="selectedMicrophoneId"  >
+            <option *ngFor="let microphone of microphones" [value]="microphone.id">{{microphone.name}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="speaker">Speaker</label>
+        <div class="input-field">
+          <select (change)="changed('speaker', $event)" [(ngModel)]="selectedSpeakerId"  >
+            <option  *ngFor="let speaker of speakers" [value]="speaker.id">{{speaker.name}}</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="popup-button-row">
+        <button class="btn" (click)="closeSetting()">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

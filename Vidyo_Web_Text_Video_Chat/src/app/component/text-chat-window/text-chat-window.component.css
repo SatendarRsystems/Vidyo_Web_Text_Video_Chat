@@ -1,0 +1,134 @@
+.text-chat-window{
+	height:calc(50% - 34px);
+}
+.chat-box{
+	height:calc(100% - 27px);
+	overflow: auto;
+	border-right:solid 1px #d4d4d4;
+	padding:10px;
+	box-sizing: border-box;
+}
+.chat-box .chat-message{
+	padding-bottom:30px;
+	display: flex;
+  	align-items: stretch;
+}
+.chat-box .chat-message h4{
+	font-size: 1em;
+	font-weight: bold;
+	padding-bottom:5px;
+}
+.chat-box .chat-message .message{
+	padding:12px;
+	background:#ffffff;
+	border-radius: 4px;
+	border: solid 1px #dcdcdc;
+	box-shadow:0px 0px 5px 2px rgba(0,0,0,0.1);
+	position: relative;
+	margin-left:10px;
+	width:60%;
+}
+.left-arrow{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	overflow: hidden;
+	box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.1);
+	transform: rotate(-90deg);
+	left:-20px;
+	top:6px;
+}
+.left-arrow:after {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: #ffffff;
+	transform: rotate(45deg);
+	top: 12px;
+	left: 2px;
+	box-shadow: -1px -1px 10px -2px rgba(0, 0, 0, 0.5);
+}
+.right-arrow{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	overflow: hidden;
+	box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.1);
+	transform: rotate(87deg);
+	right:-19px;
+	top:6px;
+}
+.right-arrow:after {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: #ffffff;
+	transform: rotate(45deg);
+	top: 12px;
+	left: 2px;
+	box-shadow: -1px -1px 10px -2px rgba(0, 0, 0, 0.5);
+}
+.send-message{
+	justify-content: flex-end;
+}
+.send-message .message{
+	margin-right:10px;
+}
+.send-message .name-icon{
+	margin-left:10px;
+	margin-right:0;
+}
+
+/* chat inputbox section */
+.chat-inputbox{
+	border-bottom-left-radius: 6px;
+	background:#fff;
+	height:56px;
+	border-top:solid 1px #d4d4d4;
+	border-right:solid 1px #d4d4d4;
+	padding:6px;
+	box-sizing: border-box;
+	display: flex;
+    justify-content: space-between;
+}
+.chat-inputbox input{
+	border:solid 1px #dedede;
+	background:#f4f4f4;
+	width:calc(100% - 40px);
+	border-radius: 4px;
+	height: 42px;
+	padding:10px;
+	font-size:1em;
+	box-sizing: border-box;
+}
+.chat-inputbox .send-icon{
+	height: 43px;
+}
+.chat-inputbox .send-icon img{
+	cursor: pointer;
+	margin-top:8px;
+	margin-right:5px;
+	width:25px;
+}
+
+.name-icon{
+	border-radius: 50%;
+	width:40px;
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+	display: inline-block;
+	color:#ffffff;
+	margin-right: 10px;
+}
+
+.chat-message p {
+	word-break: break-all;
+}
+
+.chat-message pre {
+	white-space:pre-wrap;
+	word-wrap:break-word;
+}

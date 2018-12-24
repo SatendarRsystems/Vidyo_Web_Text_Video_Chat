@@ -1,0 +1,6 @@
+<div  class="user-list-window">
+  <!-- list of users present in the meeting -->
+  <ul>
+    <li *ngFor="let user of getUsers(); let i = index"><span class="name-icon" [style.background]="user.bgColor"> {{ user.firstChar }} </span><span class="titleCase">{{ user.name }}</span></li>
+  </ul>
+</div>
